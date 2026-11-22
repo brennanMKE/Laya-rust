@@ -15,3 +15,10 @@
 
 # Golden fixtures are copied from laya-go; keep them out of language stats and diffs
 tests/golden/** linguist-vendored
+
+# Generated or config files
+Cargo.lock    text -diff linguist-generated
+*.yml         text
+*.yaml        text
+*.sh          text eol=lf
+LAYA_GO_COMMIT text

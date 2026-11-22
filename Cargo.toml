@@ -1,0 +1,31 @@
+[workspace]
+resolver = "3"
+members = ["crates/*", "xtask"]
+default-members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+repository = "https://github.com/brennanMKE/laya-rust"
+rust-version = "1.95"
+
+[workspace.dependencies]
+laya-core = { path = "crates/laya-core" }
+laya-cpu = { path = "crates/laya-cpu" }
+# Pinned to the version that produced the golden fixtures (tokenizers 0.23.2).
+tokenizers = { version = "=0.23.2", default-features = false, features = ["onig"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+half = "2"
+memmap2 = "0.9"
+safetensors = "0.7"
+rayon = "1"
+gemm = "0.19"
+
+[profile.release]
+debug = "line-tables-only"
+
+[profile.test]
+opt-level = 2

@@ -1,0 +1,28 @@
+[package]
+name = "laya-cpu"
+description = "Laya's CPU inference engine: ModernBERT-large encoder plus the decision head, on packed sequences"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+laya-core.workspace = true
+half.workspace = true
+memmap2.workspace = true
+safetensors.workspace = true
+rayon.workspace = true
+gemm.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+criterion = { version = "0.8", default-features = false, features = ["cargo_bench_support"] }
+libc = "0.2"
+
+[[bench]]
+name = "cpu"
+harness = false

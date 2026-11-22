@@ -1,0 +1,17 @@
+[package]
+name = "laya-core"
+description = "Laya's text side: tokenizer, prompts, Python-compatible JSON, calibration, wire format and the Engine trait"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+tokenizers.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
