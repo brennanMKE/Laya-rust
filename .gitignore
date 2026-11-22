@@ -1,0 +1,31 @@
+# Rust
+/target/
+**/*.rs.bk
+*.pdb
+
+# Profiling and benchmarks
+*.prof
+perf.data*
+flamegraph*.svg
+/bench-results/
+*.bench.json
+
+# Local model weights (tests use LAYA_CHECKPOINT or the HF cache, never the repo)
+*.gguf
+/models/
+
+# Python (tools/)
+__pycache__/
+*.pyc
+.venv/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local env and secrets
+.env
+.env.*
+.claude/settings.local.json

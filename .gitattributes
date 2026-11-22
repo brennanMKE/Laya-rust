@@ -1,0 +1,17 @@
+# Normalize text to LF everywhere (fixtures are compared byte for byte)
+* text=auto eol=lf
+
+*.rs      text diff=rust
+*.toml    text
+*.md      text diff=markdown
+*.py      text diff=python
+*.json    text
+*.jsonl   text -diff linguist-generated
+
+# Binary fixtures and artifacts
+*.safetensors binary
+*.bin         binary
+*.png         binary
+
+# Golden fixtures are copied from laya-go; keep them out of language stats and diffs
+tests/golden/** linguist-vendored
